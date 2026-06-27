@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>青年創業補助說明會講者話術獨立講義</title>
+  <style>
+    :root {
+      --ink:#08090A;
+      --paper:#F3F4F1;
+      --soft:#E7ECF7;
+      --line:rgba(8,9,10,.14);
+      --accent:#1E63FF;
+      --muted:#596166;
+      --radius:26px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 16% 10%, rgba(30,99,255,.14), transparent 30%),
+        radial-gradient(circle at 86% 34%, rgba(120,161,255,.18), transparent 32%),
+        linear-gradient(135deg,#F9FBFF 0%,#EFF3F7 46%,#E7EDF5 100%);
+      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+      line-height:1.72;
+    }
+    a { color:inherit; }
+    .wrap { width:min(1120px, calc(100% - 40px)); margin:0 auto; }
+    header {
+      min-height:72vh;
+      display:grid;
+      align-items:center;
+      padding:64px 0 46px;
+      border-bottom:1px solid var(--line);
+    }
+    .eyebrow {
+      color:var(--accent);
+      font-size:13px;
+      font-weight:950;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    h1,h2,h3,p { margin-top:0; }
+    h1 {
+      max-width:980px;
+      margin:16px 0 22px;
+      font-size:clamp(46px,8vw,104px);
+      line-height:.96;
+      letter-spacing:-.045em;
+      font-weight:990;
+    }
+    .lead {
+      max-width:760px;
+      color:#303637;
+      font-size:22px;
+      font-weight:760;
+    }
+    .meta {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:28px;
+    }
+    .pill {
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:7px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.76);
+      font-weight:900;
+    }
+    nav {
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter:blur(18px);
+      background:rgba(243,244,241,.78);
+      border-bottom:1px solid var(--line);
+    }
+    nav .wrap {
+      display:flex;
+      gap:8px;
+      overflow:auto;
+      padding:12px 0;
+      scrollbar-width:none;
+    }
+    nav .wrap::-webkit-scrollbar { display:none; }
+    nav a {
+      white-space:nowrap;
+      text-decoration:none;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      padding:8px 13px;
+      font-weight:900;
+      font-size:14px;
+    }
+    section {
+      padding:72px 0;
+      border-bottom:1px solid var(--line);
+    }
+    h2 {
+      margin-bottom:22px;
+      font-size:clamp(32px,5vw,64px);
+      line-height:1;
+      letter-spacing:-.04em;
+    }
+    h3 {
+      margin-bottom:10px;
+      font-size:24px;
+      letter-spacing:-.02em;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:16px;
+    }
+    .card {
+      grid-column:span 6;
+      padding:24px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.82);
+      box-shadow:0 22px 70px rgba(8,9,10,.06);
+    }
+    .card.full { grid-column:span 12; }
+    .card.dark {
+      color:#fff;
+      background:
+        radial-gradient(circle at 76% 70%, rgba(30,99,255,.5), transparent 35%),
+        linear-gradient(135deg,#08101A,#0A1728 58%,#07111F);
+      border-color:rgba(30,99,255,.38);
+    }
+    .script {
+      padding:20px;
+      border-left:5px solid var(--accent);
+      border-radius:18px;
+      background:#fff;
+      font-size:18px;
+      font-weight:760;
+    }
+    .do-not {
+      padding:20px;
+      border-radius:22px;
+      background:#0A0A0A;
+      color:#fff;
+    }
+    .do-not strong { color:#BFD3FF; }
+    ul,ol { margin:0; padding-left:1.25em; }
+    li + li { margin-top:7px; }
+    table {
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:22px;
+      background:#fff;
+      border:1px solid var(--line);
+    }
+    th,td {
+      padding:13px 14px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+    th { background:var(--ink); color:#fff; }
+    .small { color:var(--muted); font-size:14px; font-weight:760; }
+    footer {
+      padding:36px 0;
+      color:#fff;
+      background:var(--ink);
+    }
+    footer a { color:#BFD3FF; }
+    @media (max-width:820px) {
+      .wrap { width:min(100% - 28px, 1120px); }
+      .card { grid-column:span 12; }
+      table { min-width:760px; }
+      .table-scroll { overflow:auto; }
+    }
+    @media print {
+      nav { display:none; }
+      body { background:#fff; }
+      section { break-inside:avoid; padding:36px 0; }
+      .card { box-shadow:none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Speaker Notes / Kaohsiung Youth Startup Grant</div>
+      <h1>青年創業補助說明會講者話術</h1>
+      <p class="lead">本講義給講者在說明會、招生說明、課前諮詢使用。核心任務是協助學生與受訓者判斷路線、補齊文件、建立申請準備能力，不承諾補助一定核定。</p>
+      <div class="meta">
+        <span class="pill">查核日期 2026-06-27</span>
+        <span class="pill">對外說明會版</span>
+        <span class="pill">可列印講義</span>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="講義導覽">
+    <div class="wrap">
+      <a href="#opening">開場</a>
+      <a href="#core">核心訊息</a>
+      <a href="#routes">一般型／競爭型</a>
+      <a href="#flow">90分鐘流程</a>
+      <a href="#selfcheck">自評帶法</a>
+      <a href="#qa">常見問答</a>
+      <a href="#close">收尾</a>
+      <a href="#sources">來源</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="opening">
+      <div class="wrap">
+        <h2>開場 3 分鐘</h2>
+        <div class="grid">
+          <article class="card dark full">
+            <h3>第一句話</h3>
+            <p class="script">今天不是要告訴大家「怎麼保證拿到補助」，而是要協助你判斷：我現在能不能申請、比較適合一般型還是競爭型、送件前還缺哪些文件與營運證據。</p>
+          </article>
+          <article class="card">
+            <h3>先降低錯誤期待</h3>
+            <p>學生、受訓者或個人想法，通常不是立即申請主體。補助討論要回到高雄事業主體、負責人條件、創業輔導時數、營業事實與文件證據。</p>
+          </article>
+          <article class="card">
+            <h3>說明會成果</h3>
+            <p>聽完後，每個人至少要知道自己屬於三種狀態之一：優先評估一般型、可評估競爭型、或先暫不進入申請。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="core">
+      <div class="wrap">
+        <h2>核心訊息</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>訊息 1：先判斷，再上課</h3>
+            <p class="script">課程不是單純教你填表，而是先把申請資格、事業狀態、補助項目與文件證據整理出來。沒有主體或文件時，先做創業準備課，不急著送件。</p>
+          </article>
+          <article class="card">
+            <h3>訊息 2：補助不是獎學金</h3>
+            <p class="script">這是青年事業補助，不是學生身分補助。重點是你是否已經能用事業主體提出合理計畫，並接受資格審查、訪視、抽籤或審查會議。</p>
+          </article>
+          <article class="card">
+            <h3>訊息 3：一般型與競爭型不是金額差</h3>
+            <p class="script">一般型偏初創、小微、文件可補齊；競爭型偏已有營運基礎、成長證據、預算與計畫書說服力的新創。</p>
+          </article>
+          <article class="card">
+            <h3>訊息 4：我們能提供的是準備路徑</h3>
+            <p class="script">我們可以協助你建立申請文件包、預算表、計畫書與簡報能力，但核定仍取決於年度公告、資格審查、經費額度與審查結果。</p>
+          </article>
+          <article class="card full do-not">
+            <h3>不建議承諾</h3>
+            <ul>
+              <li><strong>不要說：</strong>上完課就一定可以申請。</li>
+              <li><strong>不要說：</strong>我們可以保證拿到 8 萬或 50 萬。</li>
+              <li><strong>不要說：</strong>學生個人想法可以直接申請。</li>
+              <li><strong>不要說：</strong>競爭型只是一般型的高金額版本。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="routes">
+      <div class="wrap">
+        <h2>一般型／競爭型講法</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>一般型話術</h3>
+            <p class="script">如果你剛開始營業，主要需求是租金、生財器具或業務行銷費，而且可以補齊高雄事業主體、創業輔導 10 小時、租約、報價單與基本稅務資料，那一般型會是比較實際的第一站。</p>
+            <ul>
+              <li>每案最高 8 萬元，補助比例最高 70%。</li>
+              <li>若申請總額超過經費，可能進入公開抽籤與正備取。</li>
+              <li>重點是資格、營業事實與文件完整度。</li>
+            </ul>
+          </article>
+          <article class="card dark">
+            <h3>競爭型話術</h3>
+            <p class="script">如果你已經有產品、市場、營運證據，且計畫要做數位雲端、IP/CIS、新聘人事或成長型投資，才適合評估競爭型。競爭型要準備的不只是附件，而是完整事業計畫與審查說服力。</p>
+            <ul>
+              <li>每案最高 50 萬元，補助比例最高 70%。</li>
+              <li>通過資格後，還會進入書面審查與會議審查。</li>
+              <li>需重新核對當年度產業別、資本額、營業額與附件規定。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="wrap">
+        <h2>90 分鐘說明會流程</h2>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>時間</th><th>段落</th><th>講者重點</th><th>帶出的行動</th></tr></thead>
+            <tbody>
+              <tr><td>0-10 分</td><td>補助定位</td><td>這不是保證補助，而是申請準備路徑。</td><td>建立正確期待。</td></tr>
+              <tr><td>10-30 分</td><td>一般型／競爭型</td><td>拆開金額、資格、審查、文件深度。</td><td>初步選路線。</td></tr>
+              <tr><td>30-50 分</td><td>正式附件</td><td>分清申請前文件、核定後請領、切結、變更。</td><td>列文件缺口。</td></tr>
+              <tr><td>50-70 分</td><td>案例對標</td><td>核定名單只能當案例，不是永久資格或保證。</td><td>找出可學條件。</td></tr>
+              <tr><td>70-90 分</td><td>現場自評</td><td>用六題分流一般型、競爭型、暫不進入。</td><td>安排下一步課程或諮詢。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="selfcheck">
+      <div class="wrap">
+        <h2>自評帶法</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>講者指令</h3>
+            <p class="script">接下來不要先問「我要拿多少補助」，先問六件事：有沒有高雄事業主體、負責人條件、創業輔導時數、營業事實、補助用途、文件證據。</p>
+          </article>
+          <article class="card">
+            <h3>三種判讀</h3>
+            <ol>
+              <li>主體或負責人條件不足：暫不進入申請。</li>
+              <li>主體與文件可補齊，但營運還早期：優先一般型。</li>
+              <li>已有營運與成長證據，且用途符合：可評估競爭型。</li>
+            </ol>
+          </article>
+          <article class="card full">
+            <h3>現場轉換話術</h3>
+            <p class="script">如果你目前被分到「暫不進入」，不是代表不能創業，而是現在先不要把力氣放在送件。下一步是完成事業設立、產品驗證、銷售紀錄與文件包，讓未來可以真的進入申請討論。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="qa">
+      <div class="wrap">
+        <h2>常見問答話術</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Q：我是學生，可以直接申請嗎？</h3>
+            <p>先看是否已有符合條件的高雄事業主體與負責人條件。學生身分本身不是申請資格。</p>
+          </article>
+          <article class="card">
+            <h3>Q：一般型是不是比較容易？</h3>
+            <p>一般型較適合早期事業，但仍需資格、文件、營業事實與可能的抽籤或訪視，不是送件就核定。</p>
+          </article>
+          <article class="card">
+            <h3>Q：競爭型是不是一定比較好？</h3>
+            <p>不一定。競爭型需要成長證據、計畫書、預算合理性與審查說服力。沒有營運基礎時，先不要硬衝。</p>
+          </article>
+          <article class="card">
+            <h3>Q：上完你們的課，時數一定被採認嗎？</h3>
+            <p>不得這樣承諾。課程可定位為申請準備訓練；正式採認需依當年度公告、青年局、政府機關、大專院校或委託單位規定核對。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="close">
+      <div class="wrap">
+        <h2>收尾與導流</h2>
+        <div class="grid">
+          <article class="card dark">
+            <h3>結尾話術</h3>
+            <p class="script">今天你不需要馬上決定要不要送件，你需要先知道自己缺哪一塊。若你偏一般型，我們接下來協助你完成 10 小時準備與文件包；若你偏競爭型，就要進入 20 小時計畫書、預算與簡報演練。</p>
+          </article>
+          <article class="card">
+            <h3>下一步安排</h3>
+            <ul>
+              <li>一般型準備班：制度、自評、商業模式、預算、附件檢查。</li>
+              <li>競爭型成長班：產業別、數位雲端/IP/CIS/聘人規劃、計畫書與簡報。</li>
+              <li>創業準備課：主體設立、產品驗證、銷售紀錄、文件證據。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="wrap">
+        <h2>來源與查核提醒</h2>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>資料</th><th>來源</th><th>查核日期</th><th>證據類型</th></tr></thead>
+            <tbody>
+              <tr><td>115年度高雄市青年創業補助一般型</td><td><a href="https://youth.kcg.gov.tw/News_Content.aspx?n=9&s=12554&sms=10146">高雄市政府青年局官方公告</a></td><td>2026-06-27</td><td>官方公告</td></tr>
+              <tr><td>115年度高雄市青年創業補助競爭型</td><td><a href="https://youth.kcg.gov.tw/News_Content.aspx?n=9&s=12542&sms=10146">高雄市政府青年局官方公告</a></td><td>2026-06-27</td><td>官方公告</td></tr>
+              <tr><td>一般型附件資源頁</td><td><a href="https://youth.kcg.gov.tw/Resource_Content.aspx?n=38&s=12555&sms=10161">高雄市政府青年局官方資源頁</a></td><td>2026-06-27</td><td>官方資源頁</td></tr>
+              <tr><td>競爭型附件資源頁</td><td><a href="https://youth.kcg.gov.tw/Resource_Content.aspx?n=38&s=12543&sms=10161">高雄市政府青年局官方資源頁</a></td><td>2026-06-27</td><td>官方資源頁</td></tr>
+              <tr><td>新創圓夢網補助彙整</td><td><a href="https://startup.sme.gov.tw/home/modules/funding/detail/?sId=121">政府彙整頁</a></td><td>2026-06-27</td><td>政府彙整頁，正式投件前仍需回青年局公告核對</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">年度型公告、附件、截止日、經費與承辦規定，正式投件前必須重新查核最新版。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>青年創業補助說明會講者話術獨立講義</strong>
+      <p class="small">本講義為說明會與課程規劃使用，不構成補助核定保證。</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>青年創業補助申請說明會｜對外版</title>
+  <style>
+    :root {
+      --ink:#08090A;
+      --paper:#F3F4F1;
+      --surface:#FFFFFF;
+      --soft:#E9ECE8;
+      --muted:#5F6768;
+      --line:rgba(8,9,10,.14);
+      --accent:#1E63FF;
+      --accent-soft:#DCE7FF;
+      --shadow:0 28px 90px rgba(8,9,10,.12);
+      --radius:28px;
+      --max:1320px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:92px; overflow-x:clip; }
+    body {
+      margin:0;
+      color:var(--ink);
+      background:var(--paper);
+      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+      line-height:1.65;
+      overflow-x:clip;
+    }
+    body:before {
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      pointer-events:none;
+      background:
+        linear-gradient(90deg, rgba(8,9,10,.075) 1px, transparent 1px) 0 0 / 25vw 100%,
+        radial-gradient(circle at 15% 18%, rgba(30,99,255,.13), transparent 30%),
+        radial-gradient(circle at 78% 34%, rgba(165,196,255,.22), transparent 34%),
+        radial-gradient(circle at 60% 92%, rgba(8,9,10,.1), transparent 36%),
+        linear-gradient(135deg, #F8FAFF 0%, #EFF3F7 42%, #E6ECF4 100%);
+      background-size:25vw 100%, 80vw 80vw, 70vw 70vw, 90vw 90vw, 100% 100%;
+      animation:page-shift 18s ease-in-out infinite alternate;
+    }
+    body:after {
+      content:"";
+      position:fixed;
+      inset:-18vh -16vw auto auto;
+      width:44vw;
+      height:44vw;
+      min-width:420px;
+      min-height:420px;
+      z-index:-1;
+      pointer-events:none;
+      background:
+        radial-gradient(circle, rgba(30,99,255,.2), transparent 62%),
+        radial-gradient(circle at 32% 70%, rgba(255,255,255,.72), transparent 42%);
+      filter:blur(26px);
+      opacity:.9;
+      animation:page-orb 16s ease-in-out infinite alternate;
+    }
+    a { color:inherit; }
+    .topbar {
+      position:sticky;
+      top:0;
+      z-index:50;
+      padding:12px clamp(12px,3vw,34px) 0;
+      pointer-events:none;
+    }
+    .topbar-inner {
+      pointer-events:auto;
+      max-width:var(--max);
+      height:68px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:9px 10px 9px 16px;
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      border-radius:999px;
+      overflow:hidden;
+      box-shadow:0 18px 60px rgba(8,9,10,.1);
+      backdrop-filter:blur(22px);
+    }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:max-content;
+      font-weight:950;
+      white-space:nowrap;
+    }
+    .brand-mark {
+      position:relative;
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      background:var(--ink);
+      overflow:hidden;
+    }
+    .brand-mark:before {
+      content:"";
+      position:absolute;
+      inset:6px;
+      border-radius:50%;
+      border:2px solid var(--accent);
+      animation:spin-ring 8s linear infinite;
+    }
+    .brand-mark:after {
+      content:"";
+      position:absolute;
+      width:16px;
+      height:16px;
+      right:2px;
+      top:4px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:-10px 12px 0 rgba(255,255,255,.92);
+    }
+    .menu-toggle {
+      display:none;
+      appearance:none;
+      align-items:center;
+      justify-content:center;
+      width:46px;
+      height:46px;
+      margin-left:auto;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:var(--ink);
+      color:#fff;
+      cursor:pointer;
+    }
+    .menu-toggle span {
+      position:relative;
+      display:block;
+      width:18px;
+      height:2px;
+      border-radius:999px;
+      background:currentColor;
+      transition:transform .25s ease, background .25s ease;
+    }
+    .menu-toggle span:before,
+    .menu-toggle span:after {
+      content:"";
+      position:absolute;
+      left:0;
+      width:18px;
+      height:2px;
+      border-radius:999px;
+      background:currentColor;
+      transition:transform .25s ease, top .25s ease;
+    }
+    .menu-toggle span:before { top:-6px; }
+    .menu-toggle span:after { top:6px; }
+    .topbar.menu-open .menu-toggle span { background:transparent; }
+    .topbar.menu-open .menu-toggle span:before { top:0; transform:rotate(45deg); }
+    .topbar.menu-open .menu-toggle span:after { top:0; transform:rotate(-45deg); }
+    .main-tabs {
+      display:flex;
+      align-items:center;
+      gap:6px;
+      overflow-x:auto;
+      scrollbar-width:none;
+      scroll-snap-type:x proximity;
+      white-space:nowrap;
+    }
+    .main-tabs::-webkit-scrollbar { display:none; }
+    .nav-link {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:8px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--ink);
+      background:rgba(255,255,255,.74);
+      text-decoration:none;
+      font-weight:900;
+      font-size:14px;
+      scroll-snap-align:start;
+      transition:transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .nav-link:hover { transform:translateY(-1px); border-color:rgba(8,9,10,.34); }
+    .nav-link:active { transform:translateY(1px) scale(.99); }
+    .nav-link.active { background:var(--ink); color:#fff; border-color:var(--ink); }
+    .hero {
+      min-height:calc(100dvh - 84px);
+      max-width:var(--max);
+      margin:0 auto;
+      padding:clamp(54px,7vw,94px) clamp(18px,4vw,34px) 42px;
+      display:grid;
+      align-items:center;
+    }
+    .hero-copy {
+      position:relative;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(300px,470px);
+      gap:clamp(28px,6vw,82px);
+      align-items:center;
+    }
+    .kicker {
+      margin:0 0 18px;
+      color:var(--accent);
+      font-size:13px;
+      line-height:1.2;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:950;
+    }
+    h1,h2,h3,h4,p { margin-top:0; }
+    h1 {
+      margin-bottom:24px;
+      max-width:860px;
+      font-size:clamp(48px,7.4vw,112px);
+      line-height:.94;
+      letter-spacing:-.045em;
+      font-weight:990;
+    }
+    .text-reveal {
+      display:block;
+    }
+    .text-reveal .char,
+    .line-mask-reveal .char {
+      display:inline-block;
+      opacity:0;
+      transform-origin:50% 80%;
+      will-change:transform, opacity, filter;
+    }
+    .kudos-reveal {
+      display:block;
+      max-width:100%;
+      overflow:visible;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+      perspective:900px;
+    }
+    .kudos-reveal .char {
+      transform:translateY(1.08em) scale(1.12) rotate(-2deg);
+      filter:blur(14px);
+      clip-path:inset(0 0 100% 0);
+    }
+    #hero-title.kudos-reveal .char {
+      animation:kudos-cut .95s cubic-bezier(.16,1,.3,1) forwards;
+      animation-delay:calc(120ms + var(--char-index) * 34ms);
+    }
+    [data-reveal].is-visible .section-title h2.kudos-reveal .char {
+      animation:kudos-cut .88s cubic-bezier(.16,1,.3,1) forwards;
+      animation-delay:calc(60ms + var(--char-index) * 24ms);
+    }
+    .line-mask-reveal {
+      display:block;
+      overflow:hidden;
+    }
+    .line-mask-reveal .char {
+      transform:translateY(1.1em);
+      filter:blur(5px);
+      clip-path:inset(0 0 100% 0);
+    }
+    [data-reveal].is-visible .statement h3.line-mask-reveal .char,
+    [data-reveal].is-visible .route-card h3.line-mask-reveal .char,
+    [data-reveal].is-visible .result-box h3.line-mask-reveal .char,
+    [data-reveal].is-visible .time-step strong.line-mask-reveal .char {
+      animation:line-mask-slide .72s cubic-bezier(.16,1,.3,1) forwards;
+      animation-delay:calc(50ms + var(--char-index) * 26ms);
+    }
+    .typewriter-reveal {
+      display:block;
+      max-width:100%;
+      overflow:hidden;
+      white-space:normal;
+      clip-path:inset(0 100% 0 0);
+      will-change:clip-path;
+    }
+    .hero .typewriter-reveal {
+      animation:typewriter-line 1.5s steps(var(--type-steps)) .25s forwards;
+    }
+    [data-reveal].is-visible .section-title p.typewriter-reveal {
+      animation:typewriter-line 1.15s steps(var(--type-steps)) .18s forwards;
+    }
+    .hero-lead {
+      max-width:620px;
+      margin-bottom:28px;
+      color:#303637;
+      font-size:clamp(18px,2vw,25px);
+      line-height:1.55;
+      font-weight:760;
+    }
+    .cta-row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .cta {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid var(--ink);
+      background:var(--ink);
+      color:#fff;
+      text-decoration:none;
+      font-weight:930;
+      transition:transform .25s ease, background .25s ease, color .25s ease;
+    }
+    .cta.secondary { background:transparent; color:var(--ink); }
+    .cta:hover { transform:translateY(-2px); }
+    .cta:active { transform:translateY(1px) scale(.99); }
+    .hero-visual {
+      position:relative;
+      min-height:430px;
+      border-radius:36px;
+      background:var(--ink);
+      color:#fff;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .hero-visual svg { position:absolute; inset:0; width:100%; height:100%; }
+    .hero-visual .visual-label {
+      position:absolute;
+      left:26px;
+      bottom:24px;
+      right:26px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
+      align-items:end;
+      z-index:2;
+    }
+    .visual-label strong { font-size:clamp(26px,4vw,52px); line-height:.98; letter-spacing:-.035em; }
+    .visual-label span { color:rgba(255,255,255,.72); font-weight:800; }
+    .metric-rail {
+      margin-top:42px;
+      border-radius:999px;
+      background:var(--ink);
+      color:#fff;
+      overflow:hidden;
+      max-width:100%;
+      contain:paint;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .metric-track {
+      display:flex;
+      width:max-content;
+      animation:rail 24s linear infinite;
+    }
+    .metric-track span {
+      display:inline-flex;
+      align-items:center;
+      min-height:58px;
+      padding:0 34px;
+      font-size:18px;
+      font-weight:920;
+      white-space:nowrap;
+    }
+    .metric-track b { color:var(--accent-soft); font-size:26px; margin-right:8px; }
+    .section {
+      max-width:var(--max);
+      margin:0 auto;
+      padding:clamp(78px,10vw,132px) clamp(18px,4vw,34px);
+      border-top:1px solid var(--line);
+    }
+    .section-title {
+      max-width:800px;
+      margin-bottom:34px;
+    }
+    .section-title h2 {
+      margin:0 0 16px;
+      font-size:clamp(34px,5.5vw,78px);
+      line-height:.98;
+      letter-spacing:-.04em;
+      font-weight:980;
+    }
+    .section-title p {
+      max-width:680px;
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+      font-weight:720;
+    }
+    .overview-grid {
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .statement {
+      min-height:420px;
+      border-radius:var(--radius);
+      padding:34px;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      overflow:hidden;
+      position:relative;
+    }
+    .statement,
+    .route-card.black,
+    .result-box {
+      isolation:isolate;
+      background:
+        linear-gradient(135deg, #07101A 0%, #08182B 54%, #06101D 100%);
+      border:1px solid rgba(30,99,255,.44);
+      box-shadow:0 32px 90px rgba(5,18,42,.26), inset 0 1px 0 rgba(255,255,255,.12);
+      animation:alternating-spot-panel 3s ease-in-out infinite;
+    }
+    .statement:before,
+    .route-card.black:before,
+    .result-box:before {
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+      background:
+        radial-gradient(circle at 14% 14%, rgba(255,255,255,.72), transparent 18%),
+        radial-gradient(circle at 28% 30%, rgba(86,137,255,.42), transparent 38%);
+      opacity:.2;
+      filter:blur(20px) brightness(.82);
+      transform:scale(1);
+      animation:left-spot-brightness 3s ease-in-out infinite;
+    }
+    .statement:after {
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+      background:
+        radial-gradient(circle at 84% 82%, rgba(30,99,255,.76), transparent 28%),
+        radial-gradient(circle at 66% 66%, rgba(255,255,255,.2), transparent 35%);
+      opacity:.2;
+      filter:blur(20px) brightness(.82);
+      transform:scale(1);
+      animation:right-spot-brightness 3s ease-in-out infinite;
+    }
+    .route-card.black:after,
+    .result-box:after {
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+      background:
+        radial-gradient(circle at 84% 82%, rgba(30,99,255,.76), transparent 28%),
+        radial-gradient(circle at 66% 66%, rgba(255,255,255,.2), transparent 35%);
+      opacity:.2;
+      filter:blur(20px) brightness(.82);
+      transform:scale(1);
+      animation:right-spot-brightness 3s ease-in-out infinite;
+    }
+    .statement > *,
+    .route-card.black > *,
+    .result-box > * {
+      position:relative;
+      z-index:1;
+    }
+    .statement h3 { max-width:720px; margin:0; font-size:clamp(34px,5vw,72px); line-height:1; letter-spacing:-.04em; }
+    .statement p { position:relative; max-width:560px; margin:30px 0 0; color:rgba(255,255,255,.72); font-size:18px; font-weight:760; }
+    .proof-list {
+      display:grid;
+      gap:12px;
+    }
+    .proof-item {
+      padding:24px;
+      min-height:132px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+    }
+    .proof-item strong { display:block; margin-bottom:8px; font-size:22px; letter-spacing:-.02em; }
+    .proof-item span { color:var(--muted); font-weight:720; }
+    .route-duo {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .route-card {
+      min-height:520px;
+      border-radius:34px;
+      padding:32px;
+      border:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      overflow:hidden;
+      position:relative;
+      background:var(--surface);
+    }
+    .route-card.black { color:#fff; }
+    .route-card h3 { margin:0; font-size:clamp(34px,5vw,78px); line-height:.96; letter-spacing:-.045em; }
+    .route-card .amount { font-size:clamp(58px,9vw,118px); line-height:.8; letter-spacing:-.06em; font-weight:990; color:var(--accent); }
+    .route-card ul { margin:26px 0 0; padding:0; list-style:none; display:grid; gap:10px; }
+    .route-card li { padding-top:10px; border-top:1px solid currentColor; font-weight:780; opacity:.8; }
+    .docs-shell {
+      display:grid;
+      grid-template-columns:260px minmax(0,1fr);
+      gap:22px;
+      align-items:start;
+    }
+    .doc-switch {
+      position:sticky;
+      top:94px;
+      display:grid;
+      gap:8px;
+      padding:10px;
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:rgba(255,255,255,.86);
+      backdrop-filter:blur(18px);
+    }
+    .doc-switch button {
+      appearance:none;
+      min-height:48px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid transparent;
+      background:transparent;
+      color:var(--ink);
+      font-weight:900;
+      cursor:pointer;
+      text-align:left;
+    }
+    .doc-switch button.active { background:var(--ink); color:#fff; }
+    .doc-panel { display:none; }
+    .doc-panel.active { display:block; }
+    .resource-group {
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:var(--surface);
+      margin-bottom:12px;
+      overflow:hidden;
+    }
+    .resource-group summary {
+      cursor:pointer;
+      padding:18px 22px;
+      font-size:20px;
+      font-weight:930;
+      list-style:none;
+    }
+    .resource-group summary::-webkit-details-marker { display:none; }
+    .resource-group ul { margin:0; padding:0 22px 20px; list-style:none; display:grid; gap:10px; }
+    .resource-group li {
+      display:grid;
+      gap:4px;
+      padding-top:10px;
+      border-top:1px solid var(--line);
+    }
+    .resource-group a { color:var(--ink); font-weight:850; text-decoration:none; }
+    .resource-group a:hover { color:var(--accent); }
+    .resource-group span { color:var(--muted); font-size:13px; font-weight:760; }
+    .resource-group small {
+      display:inline-flex;
+      margin-left:8px;
+      padding:1px 7px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:11px;
+      color:var(--ink);
+    }
+    .how-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .how-card { padding:26px; border-radius:24px; background:var(--surface); border:1px solid var(--line); }
+    .selfcheck-layout { display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:22px; align-items:start; }
+    .quiz-panel { border-radius:34px; background:var(--surface); border:1px solid var(--line); overflow:hidden; }
+    .quiz-progress { height:4px; background:var(--soft); }
+    .quiz-progress span { display:block; height:100%; width:16.6%; background:var(--accent); transition:width .35s ease; }
+    .quiz-card { display:none; padding:32px; min-height:290px; }
+    .quiz-card.active { display:flex; flex-direction:column; justify-content:space-between; }
+    .quiz-card h3 { margin:0 0 24px; font-size:clamp(28px,4.2vw,58px); line-height:1.03; letter-spacing:-.035em; }
+    .choices { display:flex; gap:10px; flex-wrap:wrap; }
+    .choices label {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-height:48px;
+      padding:10px 15px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      font-weight:900;
+      cursor:pointer;
+    }
+    .quiz-actions { display:flex; justify-content:space-between; gap:10px; padding:18px; border-top:1px solid var(--line); }
+    .quiz-actions button {
+      appearance:none;
+      min-height:44px;
+      padding:9px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--ink);
+      font-weight:900;
+      cursor:pointer;
+    }
+    .quiz-actions button.primary { background:var(--ink); color:#fff; border-color:var(--ink); }
+    .result-box {
+      position:sticky;
+      top:94px;
+      min-height:290px;
+      padding:26px;
+      border-radius:34px;
+      color:#fff;
+      overflow:hidden;
+    }
+    .result-box h3 { margin:0 0 12px; font-size:34px; letter-spacing:-.03em; }
+    .result-box p { color:rgba(255,255,255,.72); font-weight:760; }
+    .guide-table { margin-top:28px; max-width:100%; overflow:auto; }
+    table { width:100%; border-collapse:collapse; min-width:880px; background:var(--surface); border:1px solid var(--line); border-radius:22px; overflow:hidden; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); vertical-align:top; text-align:left; }
+    th { background:var(--ink); color:#fff; }
+    .timeline-wrap { position:relative; padding-top:16px; }
+    .timeline-svg { width:100%; height:120px; overflow:visible; }
+    .timeline-path { stroke:var(--ink); stroke-width:2; fill:none; stroke-dasharray:1200; stroke-dashoffset:1200; animation:path-draw 2.2s ease forwards; }
+    .timeline-dot { fill:var(--accent); filter:drop-shadow(0 0 12px rgba(30,99,255,.45)); }
+    .timeline-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-top:18px; }
+    .time-step { padding:22px; border-radius:24px; background:var(--surface); border:1px solid var(--line); }
+    .time-step strong { display:block; font-size:24px; letter-spacing:-.02em; }
+    .time-step span { color:var(--muted); font-weight:740; }
+    .source-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+    .source-item { border:1px solid var(--line); border-radius:22px; background:var(--surface); overflow:hidden; }
+    .source-item summary { cursor:pointer; padding:18px 20px; display:flex; justify-content:space-between; gap:16px; font-weight:930; list-style:none; }
+    .source-item summary::-webkit-details-marker { display:none; }
+    .source-item b { color:var(--accent); }
+    .source-item p, .source-item a { display:block; margin:0; padding:0 20px 10px; color:var(--muted); font-weight:720; }
+    .source-item a { color:var(--accent); padding-bottom:18px; text-decoration:none; }
+    footer { padding:38px clamp(18px,4vw,34px); background:var(--ink); color:#fff; }
+    footer div { max-width:var(--max); margin:0 auto; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; color:rgba(255,255,255,.72); }
+    [data-reveal] { opacity:0; transform:translateY(26px); transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    [data-reveal].is-visible { opacity:1; transform:none; }
+    @keyframes rail { to { transform:translateX(-50%); } }
+    @keyframes spin-ring { to { transform:rotate(360deg); } }
+    @keyframes path-draw { to { stroke-dashoffset:0; } }
+    @keyframes page-shift {
+      0% { background-position:0 0, 0% 0%, 100% 20%, 50% 100%, 0 0; }
+      100% { background-position:0 0, 6% 5%, 92% 30%, 55% 86%, 0 0; }
+    }
+    @keyframes page-orb {
+      0% { transform:translate3d(0,0,0) scale(1); }
+      100% { transform:translate3d(-8vw, 10vh, 0) scale(1.12); }
+    }
+    @keyframes alternating-spot-panel {
+      0%, 100% { border-color:rgba(205,222,255,.82); box-shadow:0 32px 90px rgba(5,18,42,.25), 0 0 46px rgba(255,255,255,.22), inset 0 1px 0 rgba(255,255,255,.2); }
+      50% { border-color:rgba(30,99,255,.92); box-shadow:0 34px 96px rgba(5,18,42,.28), 0 0 56px rgba(30,99,255,.4), inset 0 1px 0 rgba(255,255,255,.16); }
+    }
+    @keyframes left-spot-brightness {
+      0%, 100% { opacity:1; filter:blur(12px) brightness(1.85); transform:scale(1.08); }
+      25% { opacity:.62; filter:blur(16px) brightness(1.18); transform:scale(1.03); }
+      50% { opacity:.02; filter:blur(30px) brightness(.45); transform:scale(.94); }
+      75% { opacity:.38; filter:blur(22px) brightness(.82); transform:scale(.98); }
+    }
+    @keyframes right-spot-brightness {
+      0%, 100% { opacity:.02; filter:blur(30px) brightness(.45); transform:scale(.94); }
+      25% { opacity:.38; filter:blur(22px) brightness(.82); transform:scale(.98); }
+      50% { opacity:1; filter:blur(12px) brightness(1.9); transform:scale(1.1); }
+      75% { opacity:.62; filter:blur(16px) brightness(1.18); transform:scale(1.03); }
+    }
+    @keyframes kudos-cut {
+      0% { opacity:0; transform:translateY(1.08em) scale(1.12) rotate(-2deg); filter:blur(14px); clip-path:inset(0 0 100% 0); text-shadow:none; }
+      46% { opacity:1; filter:blur(2px); text-shadow:0 0 32px rgba(30,99,255,.25); }
+      100% { opacity:1; transform:translateY(0) scale(1) rotate(0); filter:blur(0); clip-path:inset(0 0 0 0); text-shadow:none; }
+    }
+    @keyframes line-mask-slide {
+      0% { opacity:0; transform:translateY(1.1em); filter:blur(5px); clip-path:inset(0 0 100% 0); }
+      100% { opacity:1; transform:translateY(0); filter:blur(0); clip-path:inset(0 0 0 0); }
+    }
+    @keyframes typewriter-line {
+      from { clip-path:inset(0 100% 0 0); }
+      to { clip-path:inset(0 0 0 0); }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-flow { stroke-dasharray:18 12; animation:flow 14s linear infinite; }
+      .route-pulse { animation:pulse 3s ease-in-out infinite; transform-origin:center; }
+    }
+    @keyframes flow { to { stroke-dashoffset:-240; } }
+    @keyframes pulse { 50% { transform:scale(1.18); opacity:.72; } }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation:none !important; scroll-behavior:auto !important; transition:none !important; }
+      [data-reveal] { opacity:1; transform:none; }
+      .text-reveal .char,
+      .line-mask-reveal .char { opacity:1; transform:none; filter:none; clip-path:none; }
+      .typewriter-reveal { clip-path:none; white-space:normal; }
+    }
+    @media (max-width:980px) {
+      html { scroll-padding-top:88px; }
+      .topbar { padding:12px 14px 0; }
+      .topbar-inner {
+        height:66px;
+        min-height:66px;
+        border-radius:999px;
+        gap:10px;
+        flex-wrap:wrap;
+        align-content:flex-start;
+      }
+      .menu-toggle { display:inline-flex; flex:0 0 auto; }
+      .brand { min-width:auto; }
+      .main-tabs {
+        display:none;
+        width:100%;
+        flex:0 0 100%;
+        min-width:0;
+        padding:8px 0 2px;
+        overflow:visible;
+        white-space:normal;
+        scroll-snap-type:none;
+      }
+      .topbar.menu-open .topbar-inner {
+        height:auto;
+        min-height:66px;
+        border-radius:28px;
+        padding-bottom:10px;
+        overflow:visible;
+        background:rgba(225,229,235,.62);
+        border-color:rgba(8,9,10,.12);
+        box-shadow:0 24px 70px rgba(8,9,10,.12);
+        backdrop-filter:blur(24px) saturate(1.08);
+      }
+      .topbar.menu-open .main-tabs {
+        display:grid;
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+      .topbar.menu-open .nav-link {
+        width:100%;
+        min-height:44px;
+        justify-content:flex-start;
+        padding:10px 14px;
+        background:rgba(8,9,10,.5);
+        color:#fff;
+        border-color:rgba(8,9,10,.08);
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+      }
+      .topbar.menu-open .nav-link.active {
+        background:rgba(8,9,10,.5);
+        color:#fff;
+        border-color:rgba(8,9,10,.08);
+      }
+      .topbar.menu-open .nav-link:hover {
+        background:rgba(8,9,10,.58);
+      }
+      .hero { min-height:auto; padding-top:56px; }
+      .hero-copy,.overview-grid,.route-duo,.docs-shell,.selfcheck-layout,.timeline-grid,.source-grid { grid-template-columns:1fr; }
+      .hero-visual { min-height:360px; }
+      .metric-rail { border-radius:26px; }
+      .section { padding-top:82px; padding-bottom:82px; }
+      .doc-switch,.result-box { position:static; }
+      .how-grid { grid-template-columns:1fr; }
+      .timeline-svg { display:none; }
+    }
+    @media (max-width:520px) {
+      .brand { font-size:15px; }
+      .brand span:last-child { display:none; }
+      h1 {
+        max-width:100%;
+        font-size:clamp(40px,12vw,56px);
+        line-height:1.02;
+        letter-spacing:-.035em;
+      }
+      .kicker {
+        max-width:100%;
+        font-size:12px;
+        line-height:1.25;
+        letter-spacing:.12em;
+      }
+      .hero-lead {
+        max-width:100%;
+        font-size:17px;
+        line-height:1.5;
+      }
+      .section-title h2 {
+        font-size:clamp(34px,10.8vw,48px);
+        line-height:1.04;
+        letter-spacing:-.035em;
+      }
+      .section-title p {
+        max-width:100%;
+        font-size:16px;
+        line-height:1.55;
+      }
+      .typewriter-reveal {
+        max-width:100%;
+        white-space:normal;
+      }
+      .route-card { min-height:430px; }
+      .route-card .amount { font-size:76px; }
+      .visual-label { grid-template-columns:1fr !important; }
+      .metric-rail { border-radius:24px; }
+      .metric-track {
+        width:100%;
+        display:grid;
+        animation:none;
+      }
+      .metric-track span {
+        min-height:46px;
+        padding:0 18px;
+        border-bottom:1px solid rgba(255,255,255,.14);
+      }
+      .metric-track span:nth-child(n+6) { display:none; }
+      table { min-width:100%; table-layout:fixed; }
+      th,td { padding:10px 9px; font-size:13px; word-break:break-word; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="回到頁首"><span class="brand-mark" aria-hidden="true"></span><span>青年創業補助說明會</span></a>
+      <button class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="siteNav"><span aria-hidden="true"></span></button>
+      <nav class="main-tabs" id="siteNav" aria-label="頁首分類">
+        <a class="nav-link active" href="#overview">總覽</a>
+        <a class="nav-link" href="#routes">一般型／競爭型</a>
+        <a class="nav-link" href="#documents">正式附件</a>
+        <a class="nav-link" href="#selfcheck">學員自評</a>
+        <a class="nav-link" href="#session">說明會流程</a>
+        <a class="nav-link" href="#sources">來源</a>
+        <a class="nav-link" href="speaker-notes.html" target="_blank" rel="noopener">講者話術</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div>
+          <p class="kicker">Kaohsiung Youth Startup Grant Briefing</p>
+          <h1 id="hero-title">把創業想法，整理成可申請的事業計畫</h1>
+          <p class="hero-lead">協助學生與受訓者判斷路線，建立資格、文件與計畫能力。</p>
+          <div class="cta-row">
+            <a class="cta" href="#selfcheck">開始自評</a>
+            <a class="cta secondary" href="#documents">查看附件</a>
+          </div>
+        </div>
+        <aside class="hero-visual" aria-label="申請準備路徑視覺">
+          <svg viewBox="0 0 520 520" role="img" aria-label="從創業想法到申請路線的動態路徑">
+            <defs>
+              <linearGradient id="lineGlow" x1="0" x2="1" y1="0" y2="1">
+                <stop stop-color="#1E63FF" />
+                <stop offset="1" stop-color="#DCE7FF" />
+              </linearGradient>
+              <filter id="softGlow">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+            </defs>
+            <rect width="520" height="520" fill="#08090A" />
+            <path d="M64 338 C132 226 204 380 270 234 S390 128 456 190" stroke="rgba(255,255,255,.18)" stroke-width="1.5" fill="none"/>
+            <path class="hero-flow" d="M64 338 C132 226 204 380 270 234 S390 128 456 190" stroke="url(#lineGlow)" stroke-width="4" stroke-linecap="round" fill="none" filter="url(#softGlow)"/>
+            <circle class="route-pulse" cx="64" cy="338" r="10" fill="#1E63FF"/>
+            <circle class="route-pulse" cx="270" cy="234" r="10" fill="#1E63FF" style="animation-delay:.7s"/>
+            <circle class="route-pulse" cx="456" cy="190" r="10" fill="#1E63FF" style="animation-delay:1.4s"/>
+            <text x="46" y="388" fill="rgba(255,255,255,.62)" font-size="15" font-weight="800">想法</text>
+            <text x="236" y="286" fill="rgba(255,255,255,.62)" font-size="15" font-weight="800">文件</text>
+            <text x="416" y="238" fill="rgba(255,255,255,.62)" font-size="15" font-weight="800">送件</text>
+          </svg>
+          <div class="visual-label"><strong>路線先判斷</strong><span>不是先填表，而是先確認能不能申請。</span></div>
+        </aside>
+      </div>
+      <div class="metric-rail" aria-label="補助重點指標">
+        <div class="metric-track">
+          <span><b>10h</b>一般型輔導時數</span><span><b>20h</b>競爭型準備基準</span><span><b>8萬</b>一般型最高</span><span><b>50萬</b>競爭型最高</span><span><b>51</b>份官方附件</span>
+          <span><b>10h</b>一般型輔導時數</span><span><b>20h</b>競爭型準備基準</span><span><b>8萬</b>一般型最高</span><span><b>50萬</b>競爭型最高</span><span><b>51</b>份官方附件</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview" data-section data-reveal>
+      <div class="section-title"><h2>這不是保證補助，而是申請準備路徑</h2><p>說明會先建立正確判斷：誰能申請、該走哪一型、送件前缺什麼證據。</p></div>
+      <div class="overview-grid">
+        <article class="statement"><h3>先判斷，再設計課程與文件。</h3><p>學生或受訓者通常不是立即申請者。真正要準備的是高雄事業主體、創業輔導時數、營業事實與文件證據。</p></article>
+        <div class="proof-list">
+          <div class="proof-item"><strong>申請主體</strong><span>高雄公司、商業或稅籍資料，是進入補助討論的基本門檻。</span></div>
+          <div class="proof-item"><strong>課程時數</strong><span>一般型至少10小時，競爭型以20小時作準備基準。</span></div>
+          <div class="proof-item"><strong>文件證據</strong><span>租約、報價、稅務、切結與計畫書要能相互支撐。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="routes" data-section data-reveal>
+      <div class="section-title"><h2>兩條路線，兩種準備強度</h2><p>一般型偏初創與小微事業，競爭型偏成長新創。差異不是金額而已，是審查邏輯不同。</p></div>
+      <div class="route-duo">
+        <article class="route-card"><h3>一般型</h3><div><div class="amount">8萬</div><ul><li>適合初創、小微或剛開始營業。</li><li>以租金、生財器具、業務行銷費為主。</li><li>可能因經費額度進入公開抽籤與正備取。</li></ul></div></article>
+        <article class="route-card black"><h3>競爭型</h3><div><div class="amount">50萬</div><ul><li>適合已有營運基礎、需要擴張的新創。</li><li>可含數位雲端、IP/CIS、新聘人事等項目。</li><li>通過資格後進入書面與會議審查。</li></ul></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="documents" data-section data-reveal>
+      <div class="section-title"><h2>正式附件，依使用時機整理</h2><p>附件已依青年局官方資源頁整理。說明會現場先教用途與順序，不要求學生一次填完。</p></div>
+      <div class="docs-shell">
+        <div class="doc-switch" role="tablist" aria-label="附件分類">
+          <button class="active" data-doc-target="general">一般型附件</button>
+          <button data-doc-target="competitive">競爭型附件</button>
+          <button data-doc-target="how">填寫順序</button>
+        </div>
+        <div>
+          <div class="doc-panel active" id="docs-general"><details class="resource-group" open><summary>計畫規範</summary><ul><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/115%E5%B9%B4%E5%BA%A6%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9%E5%AF%A6%E6%96%BD%E8%A8%88%E7%95%AB%28%E4%B8%80%E8%88%AC%E5%9E%8B%29.pdf" target="_blank">115年度青年創業補助實施計畫(一般型).pdf</a><span>說明會前<small>PDF</small></span></li></ul></details><details class="resource-group" open><summary>切結與聲明</summary><ul><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/03.115%E5%95%86%E6%A5%AD%E4%BB%A5%E8%B2%A0%E8%B2%AC%E4%BA%BA%E4%BD%9C%E7%82%BA%E5%8C%AF%E6%AC%BE%E5%B8%B3%E6%88%B6%E5%88%87%E7%B5%90%E6%9B%B8.docx" target="_blank">03.115商業以負責人作為匯款帳戶切結書.docx</a><span>申請前或核銷時<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/03.115%E5%95%86%E6%A5%AD%E4%BB%A5%E8%B2%A0%E8%B2%AC%E4%BA%BA%E4%BD%9C%E7%82%BA%E5%8C%AF%E6%AC%BE%E5%B8%B3%E6%88%B6%E5%88%87%E7%B5%90%E6%9B%B8.odt" target="_blank">03.115商業以負責人作為匯款帳戶切結書.odt</a><span>申請前或核銷時<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/03.115%E5%95%86%E6%A5%AD%E4%BB%A5%E8%B2%A0%E8%B2%AC%E4%BA%BA%E4%BD%9C%E7%82%BA%E5%8C%AF%E6%AC%BE%E5%B8%B3%E6%88%B6%E5%88%87%E7%B5%90%E6%9B%B8.pdf" target="_blank">03.115商業以負責人作為匯款帳戶切結書.pdf</a><span>申請前或核銷時<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/08.115%E5%B9%B4%E4%BB%98%E7%8F%BE%E9%87%91-%E7%A7%9F%E9%87%91%E5%88%87%E7%B5%90%E6%9B%B8.docx" target="_blank">08.115年付現金-租金切結書.docx</a><span>申請前或核銷時<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/08.115%E5%B9%B4%E4%BB%98%E7%8F%BE%E9%87%91-%E7%A7%9F%E9%87%91%E5%88%87%E7%B5%90%E6%9B%B8.odt" target="_blank">08.115年付現金-租金切結書.odt</a><span>申請前或核銷時<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/08.115%E5%B9%B4%E4%BB%98%E7%8F%BE%E9%87%91-%E7%A7%9F%E9%87%91%E5%88%87%E7%B5%90%E6%9B%B8.pdf" target="_blank">08.115年付現金-租金切結書.pdf</a><span>申請前或核銷時<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/09.115%E5%B9%B4%E7%89%B9%E6%AE%8A-%E9%97%9C%E4%BF%82%E4%BA%BA%E5%B8%B3%E6%88%B6%E6%94%B6%E6%AC%BE-%E7%A7%9F%E9%87%91%E5%88%87%E7%B5%90%E6%9B%B8%28%E9%87%91%E9%A1%8D%E4%B8%8D%E5%90%8C%29.docx" target="_blank">09.115年特殊-關係人帳戶收款-租金切結書(金額不同).docx</a><span>申請前或核銷時<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/09.115%E5%B9%B4%E7%89%B9%E6%AE%8A-%E9%97%9C%E4%BF%82%E4%BA%BA%E5%B8%B3%E6%88%B6%E6%94%B6%E6%AC%BE-%E7%A7%9F%E9%87%91%E5%88%87%E7%B5%90%E6%9B%B8%28%E9%87%91%E9%A1%8D%E4%B8%8D%E5%90%8C%29.odt" target="_blank">09.115年特殊-關係人帳戶收款-租金切結書(金額不同).odt</a><span>申請前或核銷時<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/09.115%E5%B9%B4%E7%89%B9%E6%AE%8A-%E9%97%9C%E4%BF%82%E4%BA%BA%E5%B8%B3%E6%88%B6%E6%94%B6%E6%AC%BE-%E7%A7%9F%E9%87%91%E5%88%87%E7%B5%90%E6%9B%B8%28%E9%87%91%E9%A1%8D%E4%B8%8D%E5%90%8C%29.pdf" target="_blank">09.115年特殊-關係人帳戶收款-租金切結書(金額不同).pdf</a><span>申請前或核銷時<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/10.115%E5%B9%B4%E7%89%B9%E6%AE%8A-%E8%A3%9C%E5%8A%A9%E6%AC%BE%E6%94%B6%E6%AC%BE%E4%BA%BA%E9%9D%9E%E4%BA%8B%E6%A5%AD%E6%88%96%E8%B2%A0%E8%B2%AC%E4%BA%BA%E5%88%87%E7%B5%90%E6%9B%B8.docx" target="_blank">10.115年特殊-補助款收款人非事業或負責人切結書.docx</a><span>申請前或核銷時<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/10.115%E5%B9%B4%E7%89%B9%E6%AE%8A-%E8%A3%9C%E5%8A%A9%E6%AC%BE%E6%94%B6%E6%AC%BE%E4%BA%BA%E9%9D%9E%E4%BA%8B%E6%A5%AD%E6%88%96%E8%B2%A0%E8%B2%AC%E4%BA%BA%E5%88%87%E7%B5%90%E6%9B%B8.odt" target="_blank">10.115年特殊-補助款收款人非事業或負責人切結書.odt</a><span>申請前或核銷時<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/10.115%E5%B9%B4%E7%89%B9%E6%AE%8A-%E8%A3%9C%E5%8A%A9%E6%AC%BE%E6%94%B6%E6%AC%BE%E4%BA%BA%E9%9D%9E%E4%BA%8B%E6%A5%AD%E6%88%96%E8%B2%A0%E8%B2%AC%E4%BA%BA%E5%88%87%E7%B5%90%E6%9B%B8.pdf" target="_blank">10.115年特殊-補助款收款人非事業或負責人切結書.pdf</a><span>申請前或核銷時<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/11.115%E5%B9%B4%E7%89%B9%E6%AE%8A-%E9%97%9C%E4%BF%82%E4%BA%BA%E5%B8%B3%E6%88%B6%E6%94%B6%E6%AC%BE-%E7%A7%9F%E9%87%91%E5%88%87%E7%B5%90%E6%9B%B8%28%E5%B8%B3%E8%99%9F%E4%B8%8D%E5%90%8C%29.docx" target="_blank">11.115年特殊-關係人帳戶收款-租金切結書(帳號不同).docx</a><span>申請前或核銷時<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/11.115%E5%B9%B4%E7%89%B9%E6%AE%8A-%E9%97%9C%E4%BF%82%E4%BA%BA%E5%B8%B3%E6%88%B6%E6%94%B6%E6%AC%BE-%E7%A7%9F%E9%87%91%E5%88%87%E7%B5%90%E6%9B%B8%28%E5%B8%B3%E8%99%9F%E4%B8%8D%E5%90%8C%29.odt" target="_blank">11.115年特殊-關係人帳戶收款-租金切結書(帳號不同).odt</a><span>申請前或核銷時<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/11.115%E5%B9%B4%E7%89%B9%E6%AE%8A-%E9%97%9C%E4%BF%82%E4%BA%BA%E5%B8%B3%E6%88%B6%E6%94%B6%E6%AC%BE-%E7%A7%9F%E9%87%91%E5%88%87%E7%B5%90%E6%9B%B8%28%E5%B8%B3%E8%99%9F%E4%B8%8D%E5%90%8C%29.pdf" target="_blank">11.115年特殊-關係人帳戶收款-租金切結書(帳號不同).pdf</a><span>申請前或核銷時<small>PDF</small></span></li></ul></details><details class="resource-group" open><summary>請領核銷</summary><ul><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/%E2%98%85115%E5%B9%B4%E5%BA%A6%E9%9D%92%E5%89%B5%E8%A3%9C%E5%8A%A9%28%E4%B8%80%E8%88%AC%E5%9E%8B%29%E8%AB%8B%E9%A0%98%E6%96%87%E4%BB%B6%E5%A1%AB%E5%AF%AB%E6%95%99%E5%AD%B8.pdf" target="_blank">★115年度青創補助(一般型)請領文件填寫教學.pdf</a><span>核定後<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/01.115%E8%AB%8B%E9%A0%98%E8%A3%9C%E5%8A%A9%E6%AC%BE%E7%94%B3%E8%AB%8B%E6%9B%B8.docx" target="_blank">01.115請領補助款申請書.docx</a><span>核定後<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/01.115%E8%AB%8B%E9%A0%98%E8%A3%9C%E5%8A%A9%E6%AC%BE%E7%94%B3%E8%AB%8B%E6%9B%B8.odt" target="_blank">01.115請領補助款申請書.odt</a><span>核定後<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/01.115%E8%AB%8B%E9%A0%98%E8%A3%9C%E5%8A%A9%E6%AC%BE%E7%94%B3%E8%AB%8B%E6%9B%B8.pdf" target="_blank">01.115請領補助款申請書.pdf</a><span>核定後<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/04.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28excel%29.ods" target="_blank">04.115經費總支出明細表(excel).ods</a><span>核定後<small>ODS</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/04.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28excel%29.pdf" target="_blank">04.115經費總支出明細表(excel).pdf</a><span>核定後<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/04.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28excel%29.xlsx" target="_blank">04.115經費總支出明細表(excel).xlsx</a><span>核定後<small>XLSX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/05.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28%E7%A7%9F%E9%87%91%29.docx" target="_blank">05.115經費總支出明細表(租金).docx</a><span>核定後<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/05.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28%E7%A7%9F%E9%87%91%29.odt" target="_blank">05.115經費總支出明細表(租金).odt</a><span>核定後<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/05.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28%E7%A7%9F%E9%87%91%29.pdf" target="_blank">05.115經費總支出明細表(租金).pdf</a><span>核定後<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/06.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28%E7%87%9F%E6%A5%AD%E7%94%A8%E7%94%9F%E8%B2%A1%E5%99%A8%E5%85%B7%29.docx" target="_blank">06.115經費總支出明細表(營業用生財器具).docx</a><span>核定後<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/06.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28%E7%87%9F%E6%A5%AD%E7%94%A8%E7%94%9F%E8%B2%A1%E5%99%A8%E5%85%B7%29.odt" target="_blank">06.115經費總支出明細表(營業用生財器具).odt</a><span>核定後<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/06.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28%E7%87%9F%E6%A5%AD%E7%94%A8%E7%94%9F%E8%B2%A1%E5%99%A8%E5%85%B7%29.pdf" target="_blank">06.115經費總支出明細表(營業用生財器具).pdf</a><span>核定後<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/07.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28%E6%A5%AD%E5%8B%99%E8%A1%8C%E9%8A%B7%E8%B2%BB%29.docx" target="_blank">07.115經費總支出明細表(業務行銷費).docx</a><span>核定後<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/07.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28%E6%A5%AD%E5%8B%99%E8%A1%8C%E9%8A%B7%E8%B2%BB%29.odt" target="_blank">07.115經費總支出明細表(業務行銷費).odt</a><span>核定後<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/07.115%E7%B6%93%E8%B2%BB%E7%B8%BD%E6%94%AF%E5%87%BA%E6%98%8E%E7%B4%B0%E8%A1%A8%28%E6%A5%AD%E5%8B%99%E8%A1%8C%E9%8A%B7%E8%B2%BB%29.pdf" target="_blank">07.115經費總支出明細表(業務行銷費).pdf</a><span>核定後<small>PDF</small></span></li></ul></details><details class="resource-group" open><summary>變更文件</summary><ul><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/%E9%99%84%E4%BB%B67.%E8%AE%8A%E6%9B%B4%E7%94%B3%E8%AB%8B%E8%A1%A8%28%E4%B8%80%E8%88%AC%E5%9E%8B%29.docx" target="_blank">附件7.變更申請表(一般型).docx</a><span>核定後如有變更<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/%E9%99%84%E4%BB%B67.%E8%AE%8A%E6%9B%B4%E7%94%B3%E8%AB%8B%E8%A1%A8%28%E4%B8%80%E8%88%AC%E5%9E%8B%29.odt" target="_blank">附件7.變更申請表(一般型).odt</a><span>核定後如有變更<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/%E9%99%84%E4%BB%B67.%E8%AE%8A%E6%9B%B4%E7%94%B3%E8%AB%8B%E8%A1%A8%28%E4%B8%80%E8%88%AC%E5%9E%8B%29.pdf" target="_blank">附件7.變更申請表(一般型).pdf</a><span>核定後如有變更<small>PDF</small></span></li></ul></details><details class="resource-group" open><summary>其他附件</summary><ul><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/02.115%E9%A0%98%E6%93%9A%28Excel%29.ods" target="_blank">02.115領據(Excel).ods</a><span>依文件用途<small>ODS</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E4%B8%80%E8%88%AC%E5%9E%8B/02.115%E9%A0%98%E6%93%9A%28Excel%29.pdf" target="_blank">02.115領據(Excel).pdf</a><span>依文件用途<small>PDF</small></span></li></ul></details></div>
+          <div class="doc-panel" id="docs-competitive"><details class="resource-group" open><summary>計畫規範</summary><ul><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%AB%98%E9%9B%84%E5%B8%82%E6%94%BF%E5%BA%9C%E9%9D%92%E5%B9%B4%E5%B1%80115%E5%B9%B4%E5%BA%A6%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9%E5%AF%A6%E6%96%BD%E8%A8%88%E7%95%AB%28%E7%AB%B6%E7%88%AD%E5%9E%8B%29.pdf" target="_blank">高雄市政府青年局115年度青年創業補助實施計畫(競爭型).pdf</a><span>說明會前<small>PDF</small></span></li></ul></details><details class="resource-group" open><summary>申請文件</summary><ul><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B61.%28%E7%AB%B6%E7%88%AD%E5%9E%8B%29%E7%94%B3%E8%AB%8B%E6%9B%B8.docx" target="_blank">附件1.(競爭型)申請書.docx</a><span>申請前<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B61.%28%E7%AB%B6%E7%88%AD%E5%9E%8B%29%E7%94%B3%E8%AB%8B%E6%9B%B8.odt" target="_blank">附件1.(競爭型)申請書.odt</a><span>申請前<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B61.%28%E7%AB%B6%E7%88%AD%E5%9E%8B%29%E7%94%B3%E8%AB%8B%E6%9B%B8.pdf" target="_blank">附件1.(競爭型)申請書.pdf</a><span>申請前<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B62.%28%E7%AB%B6%E7%88%AD%E5%9E%8B%29%E8%A8%88%E7%95%AB%E6%9B%B8.docx" target="_blank">附件2.(競爭型)計畫書.docx</a><span>申請前<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B62.%28%E7%AB%B6%E7%88%AD%E5%9E%8B%29%E8%A8%88%E7%95%AB%E6%9B%B8.odt" target="_blank">附件2.(競爭型)計畫書.odt</a><span>申請前<small>ODT</small></span></li></ul></details><details class="resource-group" open><summary>切結與聲明</summary><ul><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B63.%E5%85%B7%E7%87%9F%E6%A5%AD%E4%BA%8B%E5%AF%A6%E5%88%87%E7%B5%90%E6%9B%B8.pdf" target="_blank">附件3.具營業事實切結書.pdf</a><span>申請前或核銷時<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B64.%E5%90%8C%E6%84%8F%E3%80%81%E8%81%B2%E6%98%8E%E5%8F%8A%E6%89%BF%E8%AB%BE%E6%9B%B8.pdf" target="_blank">附件4.同意、聲明及承諾書.pdf</a><span>申請前或核銷時<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B65.%E5%80%8B%E8%B3%87%E5%90%8C%E6%84%8F%E6%9B%B8.pdf" target="_blank">附件5.個資同意書.pdf</a><span>申請前或核銷時<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B66.%E4%BA%8B%E5%89%8D%E6%8F%AD%E9%9C%B2%E8%A1%A8.pdf" target="_blank">附件6.事前揭露表.pdf</a><span>申請前或核銷時<small>PDF</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B68.%E6%9C%AA%E9%87%8D%E8%A4%87%E7%94%B3%E9%A0%98%E8%A3%9C%E5%8A%A9%E5%88%87%E7%B5%90%E6%9B%B8.pdf" target="_blank">附件8.未重複申領補助切結書.pdf</a><span>申請前或核銷時<small>PDF</small></span></li></ul></details><details class="resource-group" open><summary>變更文件</summary><ul><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B67.%E8%AE%8A%E6%9B%B4%E7%94%B3%E8%AB%8B%E8%A1%A8%28%E7%AB%B6%E7%88%AD%E5%9E%8B%29.docx" target="_blank">附件7.變更申請表(競爭型).docx</a><span>核定後如有變更<small>DOCX</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B67.%E8%AE%8A%E6%9B%B4%E7%94%B3%E8%AB%8B%E8%A1%A8%28%E7%AB%B6%E7%88%AD%E5%9E%8B%29.odt" target="_blank">附件7.變更申請表(競爭型).odt</a><span>核定後如有變更<small>ODT</small></span></li><li><a href="../%E8%B3%87%E6%96%99%E5%BA%AB_%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%A3%9C%E5%8A%A9/%E5%AE%98%E6%96%B9%E9%99%84%E4%BB%B6/%E7%AB%B6%E7%88%AD%E5%9E%8B/%E9%99%84%E4%BB%B67.%E8%AE%8A%E6%9B%B4%E7%94%B3%E8%AB%8B%E8%A1%A8%28%E7%AB%B6%E7%88%AD%E5%9E%8B%29.pdf" target="_blank">附件7.變更申請表(競爭型).pdf</a><span>核定後如有變更<small>PDF</small></span></li></ul></details></div>
+          <div class="doc-panel" id="docs-how">
+            <div class="how-grid">
+              <article class="how-card"><h3>課前</h3><p>先讀實施計畫，確認申請主體、年齡、戶籍、時數與補助項目。</p></article>
+              <article class="how-card"><h3>課中</h3><p>完成申請書、計畫書草稿、預算表與補助項目證明清單。</p></article>
+              <article class="how-card"><h3>核定後</h3><p>再處理請領、收據、支出明細與特殊付款切結等文件。</p></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="selfcheck" data-section data-reveal>
+      <div class="section-title"><h2>用六題，先分流學員狀態</h2><p>這份自評用於說明會現場初步判斷。正式投件仍以年度公告與承辦窗口說明為準。</p></div>
+      <div class="selfcheck-layout">
+        <div class="quiz-panel">
+          <div class="quiz-progress"><span id="quizProgress"></span></div>
+          <div class="quiz-card active" data-quiz-step="0"><h3>已經有高雄公司、商業或稅籍資料？</h3><div class="choices"><label><input type="radio" name="q1" value="1"> 是</label><label><input type="radio" name="q1" value="0"> 否</label></div></div>
+          <div class="quiz-card" data-quiz-step="1"><h3>負責人設籍高雄且18至45歲？</h3><div class="choices"><label><input type="radio" name="q2" value="1"> 是</label><label><input type="radio" name="q2" value="0"> 否</label></div></div>
+          <div class="quiz-card" data-quiz-step="2"><h3>已完成或可補足創業輔導時數？</h3><div class="choices"><label><input type="radio" name="q3" value="1"> 是</label><label><input type="radio" name="q3" value="0"> 否</label></div></div>
+          <div class="quiz-card" data-quiz-step="3"><h3>已有租約、報價單、合約、稅務資料等文件？</h3><div class="choices"><label><input type="radio" name="q4" value="1"> 是</label><label><input type="radio" name="q4" value="0"> 否</label></div></div>
+          <div class="quiz-card" data-quiz-step="4"><h3>已有營運成果、客戶、收入或成長證據？</h3><div class="choices"><label><input type="radio" name="q5" value="2"> 很明確</label><label><input type="radio" name="q5" value="1"> 有一點</label><label><input type="radio" name="q5" value="0"> 尚無</label></div></div>
+          <div class="quiz-card" data-quiz-step="5"><h3>補助用途是否包含數位雲端、IP/CIS或新聘人事？</h3><div class="choices"><label><input type="radio" name="q6" value="2"> 是</label><label><input type="radio" name="q6" value="0"> 否</label></div></div>
+          <div class="quiz-actions"><button type="button" id="prevQuestion">上一題</button><button type="button" class="primary" id="nextQuestion">下一題</button></div>
+        </div>
+        <aside class="result-box" id="result"><h3>初步判定</h3><p>完成六題後，這裡會顯示建議路線。</p></aside>
+      </div>
+      <div class="guide-table"><table><thead><tr><th>階段</th><th>自評問題</th><th>一般型判斷</th><th>競爭型判斷</th><th>不符合時</th></tr></thead><tbody><tr><td>路線判斷</td><td>我是否已經有高雄登記的公司、商業或稅籍資料？</td><td>需要；學生或個人想法本身尚不是申請主體。</td><td>需要；且需確認資本額、營業額與產業別。</td><td>先列為暫不進入，改走創業準備課與設立輔導。</td></tr><tr><td>負責人條件</td><td>負責人是否設籍高雄且年齡18至45歲？</td><td>需符合。</td><td>需符合。</td><td>暫不以本人作為申請主體，需評估合作、設立調整或其他資源。</td></tr><tr><td>課程時數</td><td>是否已有創業輔導課程或講座證明？</td><td>至少10小時。</td><td>以20小時作準備基準，正式投件前依當年度附件再核對。</td><td>安排課程；若課程辦理單位尚未被採認，應先定位為申請準備訓練。</td></tr><tr><td>營業狀態</td><td>是否已有營業事實、產品服務、客戶或收入紀錄？</td><td>需能通過訪視與基本文件檢查。</td><td>需能支撐成長型計畫與審查說服力。</td><td>先補營運實作、銷售測試與成果紀錄。</td></tr><tr><td>補助項目</td><td>要申請的是租金、設備、行銷、數位雲端、IP/CIS或聘人？</td><td>以租金、生財器具、業務行銷費為主。</td><td>可含租金、設備、行銷、數位雲端、IP/CIS、新聘人事等。</td><td>先做預算表與報價單清單。</td></tr><tr><td>文件證據</td><td>是否已有租約、報價單、合約、稅務資料或切結書？</td><td>文件完整度是基本門檻。</td><td>文件完整度加上計畫說服力是關鍵。</td><td>進入文件包工作坊，不急著送件。</td></tr><tr><td>競爭型門檻</td><td>我的事業是否屬競爭型公告列示產業，且已有擴張理由？</td><td>不一定需要。</td><td>需要；產業別不清楚時應以審查認定為準。</td><td>優先走一般型或暫不進入競爭型。</td></tr><tr><td>路線結論</td><td>我目前比較像初創小微、成長新創，還是創業準備中？</td><td>初創小微且文件可補齊，優先一般型。</td><td>已有營運證據、成長預算與計畫書，才進競爭型。</td><td>暫不進入，先完成創業準備與文件建置。</td></tr></tbody></table></div>
+    </section>
+
+    <section class="section" id="session" data-section data-reveal>
+      <div class="section-title"><h2>90分鐘，讓學員知道下一步</h2><p>流程設計重點是先分流，再導入一般型準備班、競爭型成長班或創業準備。</p></div>
+      <div class="timeline-wrap">
+        <svg class="timeline-svg" viewBox="0 0 1200 120" aria-hidden="true"><path class="timeline-path" d="M20 64 C180 8 260 112 420 54 S720 12 840 72 S1020 118 1180 42"/><circle class="timeline-dot" cx="20" cy="64" r="7"/><circle class="timeline-dot" cx="300" cy="76" r="7"/><circle class="timeline-dot" cx="580" cy="40" r="7"/><circle class="timeline-dot" cx="880" cy="78" r="7"/><circle class="timeline-dot" cx="1180" cy="42" r="7"/></svg>
+        <div class="timeline-grid">
+          <div class="time-step"><strong>0-10分</strong><span>補助定位，不是保證型上課補助。</span></div>
+          <div class="time-step"><strong>10-30分</strong><span>一般型與競爭型比較。</span></div>
+          <div class="time-step"><strong>30-50分</strong><span>正式附件與文件包。</span></div>
+          <div class="time-step"><strong>50-70分</strong><span>案例對標與條件拆解。</span></div>
+          <div class="time-step"><strong>70-90分</strong><span>現場自評與課程導流。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources" data-section data-reveal>
+      <div class="section-title"><h2>來源保留，正式投件前重查</h2><p>所有結論保留官方 URL、查核日期與證據類型。年度型公告正式投件前必須更新。</p></div>
+      <div class="source-grid"><details class="source-item"><summary><span>115一般型公告</span><b>verified</b></summary><p>官方公告｜查核日期 2026-06-27</p><a href="https://youth.kcg.gov.tw/News_Content.aspx?n=9&s=12554&sms=10146" target="_blank">開啟官方來源</a></details><details class="source-item"><summary><span>115一般型資源頁</span><b>verified</b></summary><p>官方附件頁｜查核日期 2026-06-27</p><a href="https://youth.kcg.gov.tw/Resource_Content.aspx?n=38&s=12555&sms=10161" target="_blank">開啟官方來源</a></details><details class="source-item"><summary><span>115競爭型公告</span><b>verified</b></summary><p>官方公告｜查核日期 2026-06-27</p><a href="https://youth.kcg.gov.tw/News_Content.aspx?n=9&s=12542&sms=10146" target="_blank">開啟官方來源</a></details><details class="source-item"><summary><span>115競爭型資源頁</span><b>verified</b></summary><p>官方附件頁｜查核日期 2026-06-27</p><a href="https://youth.kcg.gov.tw/Resource_Content.aspx?n=38&s=12543&sms=10161" target="_blank">開啟官方來源</a></details><details class="source-item"><summary><span>114一般型核定名單</span><b>verified</b></summary><p>官方核定名單｜查核日期 2026-06-27</p><a href="https://youth.kcg.gov.tw/News_Content.aspx?n=9&sms=10146&s=11930" target="_blank">開啟官方來源</a></details><details class="source-item"><summary><span>114競爭型核定名單</span><b>verified</b></summary><p>官方核定名單｜查核日期 2026-06-27</p><a href="https://youth.kcg.gov.tw/News_Content.aspx?n=9&s=11838&sms=10146" target="_blank">開啟官方來源</a></details><details class="source-item"><summary><span>智食良果案例</span><b>verified</b></summary><p>官方案例報導｜查核日期 2026-06-27</p><a href="https://youth.kcg.gov.tw/News_Content.aspx?n=9&sms=10146&s=10995" target="_blank">開啟官方來源</a></details></div>
+    </section>
+  </main>
+
+  <footer><div><strong>青年創業補助申請說明會</strong><span>青年事業端創業補助說明與申請準備，不等於培訓機構補助資格。</span></div>  <div style="max-width:1180px;margin:18px auto 0;padding:0 34px;"><a href="speaker-notes.html" style="color:#BFD3FF;font-weight:900;">打開說明會講者話術獨立講義</a></div>
+  </footer>
+
+  <script>
+    function splitTextReveal(selector, mode) {
+      document.querySelectorAll(selector).forEach((element) => {
+        if (element.dataset.textRevealReady === '1') return;
+        const text = element.textContent;
+        if (!text || !text.trim()) return;
+        element.dataset.textRevealReady = '1';
+        element.setAttribute('aria-label', text.trim());
+        if (mode === 'typewriter') {
+          element.classList.add('typewriter-reveal');
+          element.style.setProperty('--type-steps', Math.max(12, Array.from(text.trim()).length));
+          return;
+        }
+        element.classList.add(mode === 'kudos' ? 'kudos-reveal' : 'line-mask-reveal');
+        element.classList.add('text-reveal');
+        element.textContent = '';
+        let index = 0;
+        Array.from(text).forEach((char) => {
+          if (char === ' ') {
+            element.appendChild(document.createTextNode(' '));
+            return;
+          }
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.setAttribute('aria-hidden', 'true');
+          span.style.setProperty('--char-index', index);
+          span.textContent = char;
+          element.appendChild(span);
+          index += 1;
+        });
+      });
+    }
+    splitTextReveal('#hero-title, .section-title h2', 'kudos');
+    splitTextReveal('.statement h3, .route-card h3, .result-box h3, .time-step strong', 'line-mask');
+    splitTextReveal('.kicker, .hero-lead, .section-title p', 'typewriter');
+
+    const topbar = document.querySelector('.topbar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+    const sections = Array.from(document.querySelectorAll('[data-section]'));
+    function closeMenu() {
+      if (!topbar || !menuToggle) return;
+      topbar.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', '開啟選單');
+    }
+    if (menuToggle && topbar) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = topbar.classList.toggle('menu-open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? '關閉選單' : '開啟選單');
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMenu();
+      });
+    }
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href') || '';
+        if (!href.startsWith('#')) return;
+        const target = document.querySelector(href);
+        if (!target) return;
+        event.preventDefault();
+        navLinks.forEach((item) => item.classList.remove('active'));
+        link.classList.add('active');
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.pushState(null, '', href);
+        closeMenu();
+      });
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0.01 });
+    sections.forEach((section) => observer.observe(section));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.01 });
+    document.querySelectorAll('[data-reveal]').forEach((item) => revealObserver.observe(item));
+
+    const docButtons = Array.from(document.querySelectorAll('[data-doc-target]'));
+    const docPanels = Array.from(document.querySelectorAll('.doc-panel'));
+    docButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        docButtons.forEach((b) => b.classList.remove('active'));
+        docPanels.forEach((panel) => panel.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById('docs-' + button.dataset.docTarget).classList.add('active');
+      });
+    });
+
+    const quizCards = Array.from(document.querySelectorAll('.quiz-card'));
+    const prevButton = document.getElementById('prevQuestion');
+    const nextButton = document.getElementById('nextQuestion');
+    const progress = document.getElementById('quizProgress');
+    let currentStep = 0;
+    function renderQuiz() {
+      quizCards.forEach((card, index) => card.classList.toggle('active', index === currentStep));
+      progress.style.width = ((currentStep + 1) / quizCards.length * 100) + '%';
+      prevButton.disabled = currentStep === 0;
+      nextButton.textContent = currentStep === quizCards.length - 1 ? '看結果' : '下一題';
+      updateResult();
+    }
+    prevButton.addEventListener('click', () => { currentStep = Math.max(0, currentStep - 1); renderQuiz(); });
+    nextButton.addEventListener('click', () => { currentStep = Math.min(quizCards.length - 1, currentStep + 1); renderQuiz(); });
+    function updateResult() {
+      const get = (name) => {
+        const el = document.querySelector('input[name="' + name + '"]:checked');
+        return el ? Number(el.value) : null;
+      };
+      const vals = ['q1','q2','q3','q4','q5','q6'].map(get);
+      const box = document.getElementById('result');
+      if (vals.some((v) => v === null)) {
+        box.innerHTML = '<h3>初步判定</h3><p>完成六題後，這裡會顯示建議路線。</p>';
+        return;
+      }
+      const base = vals[0] + vals[1] + vals[2] + vals[3];
+      const growth = vals[4] + vals[5];
+      if (base < 3) {
+        box.innerHTML = '<h3>暫不進入申請</h3><p>建議先完成事業主體、負責人條件、時數或基本文件，再進入補助申請準備。</p>';
+      } else if (growth >= 3 && base >= 4) {
+        box.innerHTML = '<h3>可評估競爭型</h3><p>你具備較多成長型條件，可進一步檢查產業別、資本額、營業額、計畫書與審查簡報。</p>';
+      } else {
+        box.innerHTML = '<h3>優先評估一般型</h3><p>你較接近初創或小微事業路線，建議先準備10小時課程證明、租約、報價單、行銷與設備文件。</p>';
+      }
+    }
+    document.querySelectorAll('.quiz-card input').forEach((el) => el.addEventListener('change', updateResult));
+    renderQuiz();
+  </script>
+</body>
+</html>
